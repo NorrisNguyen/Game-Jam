@@ -6,6 +6,9 @@ public class OpenDoor : MonoBehaviour
 {
     private Animator anim;
 
+    public AudioClip correctSound;
+    public AudioClip incorrectSound;
+
     private bool IsAtDoor = false;
     [SerializeField] private TextMeshProUGUI CodeText;
     string codeTextValue = "";
@@ -26,12 +29,14 @@ public class OpenDoor : MonoBehaviour
         if(codeTextValue == safeCode)
         {
             anim.SetTrigger("OpenDoor");
+            AudioSource.PlayClipAtPoint(correctSound, transform.position);
             CodePanel.SetActive(false);
 
         }
         if(codeTextValue.Length >= 5)
         {
             codeTextValue = "";
+            AudioSource.PlayClipAtPoint(incorrectSound, transform.position);
         }
 
         if(Input.GetKey(KeyCode.E) && IsAtDoor == true)
