@@ -22,13 +22,14 @@ public class OpenDoor : MonoBehaviour
     void Update()
     {
         CodeText.text = codeTextValue;
+
         if(codeTextValue == safeCode)
         {
             anim.SetTrigger("OpenDoor");
             CodePanel.SetActive(false);
 
         }
-        if(codeTextValue.Length >= 4)
+        if(codeTextValue.Length >= 5)
         {
             codeTextValue = "";
         }
@@ -36,6 +37,8 @@ public class OpenDoor : MonoBehaviour
         if(Input.GetKey(KeyCode.E) && IsAtDoor == true)
         {
             CodePanel.SetActive(true);
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
         }
     }
 
@@ -51,6 +54,8 @@ public class OpenDoor : MonoBehaviour
     {
         IsAtDoor = false;
         CodePanel.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     public void AddDigit(string digit)
