@@ -11,7 +11,7 @@ public class Doors : MonoBehaviour
 
 
     public bool inReach;
-
+    private bool _isOpen = false; // Is door open?
 
 
 
@@ -47,18 +47,19 @@ public class Doors : MonoBehaviour
 
         if (inReach && Input.GetButtonDown("Interact"))
         {
-            DoorOpens();
+            _isOpen = !_isOpen;
+            
+            if(_isOpen)
+            {
+                DoorOpens();
+            }
+            else
+            {
+                DoorCloses();
+            }
         }
-
-        else
-        {
-            DoorCloses();
-        }
-
-
-
-
     }
+
     void DoorOpens ()
     {
         Debug.Log("It Opens");

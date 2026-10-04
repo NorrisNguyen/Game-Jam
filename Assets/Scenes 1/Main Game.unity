@@ -413,7 +413,7 @@ GameObject:
   - component: {fileID: 24540680}
   - component: {fileID: 24540679}
   - component: {fileID: 24540678}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: HUD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4259,6 +4259,100 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2304931149449798800, guid: 0f76269ae1c485146a382146b683886b, type: 3}
   m_PrefabInstance: {fileID: 1036946473}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &272149181
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 272149184}
+  - component: {fileID: 272149183}
+  - component: {fileID: 272149185}
+  - component: {fileID: 272149186}
+  m_Layer: 0
+  m_Name: Door_Hinge
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!95 &272149183
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 272149181}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 311e8a1be259e2a46a50453af5a61356, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!4 &272149184
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 272149181}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 18.698, y: 1.054, z: -25.685}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 793374923}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &272149185
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 272149181}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.47010422, y: 2.4962738, z: 1.1202755}
+  m_Center: {x: -0.084430695, y: -0.06749022, z: 0.57771397}
+--- !u!114 &272149186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 272149181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b6e33f3b3f724642b2e676ef79ae5bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Doors
+  door: {fileID: 272149183}
+  openText: {fileID: 24540676}
+  doorSound: {fileID: 8300000, guid: 32d4b1811dda14a6cb9e059ee8ad17d2, type: 3}
+  inReach: 0
 --- !u!1001 &273585120
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8179,7 +8273,7 @@ GameObject:
   - component: {fileID: 500557510}
   - component: {fileID: 500557509}
   - component: {fileID: 500557512}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Reach
   m_TagString: Reach
   m_Icon: {fileID: 0}
@@ -12408,12 +12502,12 @@ Transform:
   m_GameObject: {fileID: 793374922}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.033260345, y: -0.01700008, z: 0.048999786}
+  m_LocalPosition: {x: 0.062000275, y: 0.24899995, z: -0.013999939}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 492313084}
-  m_Father: {fileID: 1741468332}
+  m_Father: {fileID: 272149184}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &807829105
 PrefabInstance:
@@ -21179,7 +21273,7 @@ GameObject:
   - component: {fileID: 1338412884}
   - component: {fileID: 1338412886}
   - component: {fileID: 1338412885}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Open/Close
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23236,7 +23330,7 @@ GameObject:
   - component: {fileID: 1449437993}
   - component: {fileID: 1449437992}
   - component: {fileID: 1449437991}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PlayerCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28055,100 +28149,6 @@ Transform:
   - {fileID: 687090148}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1741468328
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1741468332}
-  - component: {fileID: 1741468331}
-  - component: {fileID: 1741468330}
-  - component: {fileID: 1741468333}
-  m_Layer: 0
-  m_Name: Door_Pivot
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1741468330
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1741468328}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b6e33f3b3f724642b2e676ef79ae5bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Doors
-  door: {fileID: 1741468333}
-  openText: {fileID: 1338412883}
-  doorSound: {fileID: 8300000, guid: ffb159a21c8a04135a5616979c828fab, type: 3}
-  inReach: 0
---- !u!65 &1741468331
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1741468328}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.30290794, y: 2.1721168, z: 1.1887665}
-  m_Center: {x: -0.11819363, y: -0.036005497, z: 0.69249344}
---- !u!4 &1741468332
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1741468328}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 18.79326, y: 1.32, z: -25.748}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 793374923}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &1741468333
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1741468328}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: a7d39bdbb6e4a3e439bd94b40f08f668, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1742551363
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31126,9 +31126,9 @@ GameObject:
   - component: {fileID: 1944436438}
   - component: {fileID: 1944436437}
   - component: {fileID: 1944436439}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31197,6 +31197,9 @@ MonoBehaviour:
   crouchingHeight: 1
   crouchTransitionSpeed: 10
   cameraOffset: 0.4
+  exclusionMask:
+    serializedVersion: 2
+    m_Bits: 55
   cameraTransform: {fileID: 1449437990}
   moveAction: {fileID: -1680190386980627800, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   jumpAction: {fileID: -2099379676528639254, guid: 052faaac586de48259a63d0c4782560b, type: 3}
@@ -35571,4 +35574,4 @@ SceneRoots:
   - {fileID: 1232203786}
   - {fileID: 1741172827}
   - {fileID: 547036291}
-  - {fileID: 1741468332}
+  - {fileID: 272149184}

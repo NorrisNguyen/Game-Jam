@@ -19,6 +19,7 @@ public class FpsMovement : MonoBehaviour
     [SerializeField] private float crouchingHeight = 1f;
     [SerializeField] private float crouchTransitionSpeed = 10f;
     [SerializeField] private float cameraOffset = 0.4f;
+    [SerializeField] private LayerMask exclusionMask;
 
     [Header("References")]
     [SerializeField] private Transform cameraTransform;
@@ -102,14 +103,29 @@ public class FpsMovement : MonoBehaviour
     }
 
     private bool CanStandUp()
-    {
-        return !Physics.CapsuleCast(
-            transform.position + _characterController.center,
-            transform.position + (Vector3.up * _characterController.height / 2),
-            _characterController.radius,
-            Vector3.up
-        );
-    }
+{
+    // Calculate where the center of the capsule WOULD be if you stood up completely
+    Vector3 standingCenter = Vector3.up * (standingHeight * 0.5f);
+    Vector3 worldStandingCenter = transform.position + standingCenter;
+
+    // Calculate the top and bottom spheres of the intended standing capsule
+    float halfHeightMinusRadius = (standingHeight * 0.5f) - _characterController.radius;
+    
+    Vector3 pointBottom = worldStandingCenter + Vector3.down * halfHeightMinusRadius;
+    Vector3 pointTop = worldStandingCenter + Vector3.up * halfHeightMinusRadius;
+
+    // Check if the standing capsule space is currently blocked by the environment
+    // We shrink the radius slightly (95%) to avoid false positive edge-clipping
+    Collider[] colliders = Physics.OverlapCapsule(
+        pointBottom, 
+        pointTop, 
+        _characterController.radius * 0.95f, 
+        exclusionMask
+    );
+
+    // If no environment colliders are in that space, it's safe to stand up
+    return colliders.Length == 0;
+}
 
     private void Sprint(InputAction.CallbackContext context)
     {
